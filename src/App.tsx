@@ -1,14 +1,23 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/Header';
-import Intro from './components/intro/Intro'
-
+import Button from './components/button/Button';
+import Card from  './components/card/Card'
+import Container from './components/card/Container'
+import Input from './components/Input/Input';
+import Title from './components/title/Title';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Intro/>
+      <Container>
+        <Title/>
+        <Card>
+        <Input label='Correo' placeholder='Correo'/>
+        <Input label='Contraseña' placeholder='Contraseña'/>
+        <Button>Enviar</Button>
+      </Card>
+      </Container>
+    
     </div>
   );
 }
