@@ -1,18 +1,25 @@
 import * as React from 'react'
 
 
-export default class Button extends React.Component{
-    public render(){        
+interface IButton{
+    block?: boolean
+}
+
+export default class Button extends React.Component<IButton>{
+    public render(){       
+        const { block = false } = this.props
         return(
-                <button style={styles} {...this.props} />
+                <button style={styles(block)} {...this.props} />
         )
     }
 }
 
-const styles ={
+const styles = (block: boolean) =>({
     color:'#fff',
     backgroundColor: '#00D182',
     border: '0px',
     padding: '10px 15px ',
-    borderRadius:'4px'
-}
+    marginBottom:'10px',
+    borderRadius:'4px',
+    width: block ? '100%' : undefined
+})

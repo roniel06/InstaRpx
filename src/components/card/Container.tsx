@@ -16,8 +16,8 @@ const styles ={
     card:{
         backgroundColor: '#eee',
         padding:'10px 15px ',
-        width:'calc(100vw - 20px)', 
-        height:'calc(100vh - 30px)',
+        width:'calc(100vw - 30px)', 
+        height:'calc(100vh - 20px)',
         display:'flex',
         justifyContent:'center',
         alignItems:'center'

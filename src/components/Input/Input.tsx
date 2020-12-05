@@ -13,7 +13,7 @@ export default class Input extends React.Component<IInputProps>{
           
             <div>
                 <span style={spanStyle}>{label}</span>
-                <input {...this.props} style={styles.input} />
+                <input {...this.props} style={styles} />
             </div>
         )
     }
@@ -21,14 +21,12 @@ export default class Input extends React.Component<IInputProps>{
 
 const spanStyle={
     color: '#777',
-    fontSize: '12px',
+    fontSize: '10px',
     textTransform: 'uppercase',
     fontWeight:900
 } as React.CSSProperties
 const styles =
-{
-
-    input: {
+{  
         borderRadius: '4px',
         backgroundColor: 'white',
         padding: '10px 15px',
@@ -36,6 +34,5 @@ const styles =
         justifyContent: 'center',
         alignItems: 'center',
         width: 'calc(100% - 30px)',
-        marginBottom: '5px'
-    }
+        marginBottom: '10px'
 }
