@@ -3,19 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import * as reducers from './ducks'
+import thunk from 'redux-thunk'
+import services from './services/firebase';
+
+const store = createStore(combineReducers({
+  ...reducers
+}), applyMiddleware(thunk.withExtraArgument(services)));
 
 ReactDOM.render(
-  <div>
+  <Provider store={store}>
     <Router>
       <App />
     </Router>
-  </div>
+  </Provider>
   ,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
