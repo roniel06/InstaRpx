@@ -5,12 +5,13 @@ export default class Title extends React.Component{
     public render(){
 
         return(
-            <h2 style={styles} />
+            <h2 {...this.props} style={styles} />
         )
     }
 }
 
 const styles =
 {
- color:'#555'
+ color:'#555',
+ 
 }

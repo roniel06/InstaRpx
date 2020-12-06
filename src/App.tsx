@@ -1,24 +1,22 @@
 import React from 'react';
 import './App.css';
-import Button from './components/button/Button';
-import Card from  './components/card/Card'
-import Container from './components/card/Container'
-import Input from './components/Input/Input';
-import Title from './components/title/Title';
+import {Route} from 'react-router-dom'
+import Login from './containers/auth/Login'
+import Register from './containers/auth/Register';
+import NewsFeed from './containers/newsFeed'
+import NavBar from './components/navbar/Navbar';
+import Profile from './components/profile/Profile';
 
 function App() {
   return (
-    <div className="App">
-      <Container>
-        <Title/>
-        <Card>
-        <Input label='Correo' placeholder='Correo'/>
-        <Input label='Contraseña' placeholder='Contraseña'/>
-        <Button>Enviar</Button>
-      </Card>
-      </Container>
-    
+    <div>
+      <Route  path='/app' component={NavBar} />
+      <Route exact={true} path='/' component={Login} />
+      <Route exact={true} path='/register' component={Register} />
+      <Route exact={true} path='/app/newsfeed' component={NewsFeed} />
+      <Route exact={true} path='/app/profile' component={Profile} />
     </div>
+
   );
 }
 

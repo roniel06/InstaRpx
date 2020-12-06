@@ -1,26 +1,32 @@
 import * as React from 'react'
 
 
-export default class Container extends React.Component{
-    public render(){
-        const { children } = this.props;
-        return(
-                <div style={styles.card}>
-                    {children}
-                </div>
+interface IContainerProps {
+    isCentered?: boolean
+}
+
+export default class Container extends React.Component<IContainerProps> {
+    public render() {
+        const { children, isCentered = false } = this.props;
+        return (
+            <div style={styles(isCentered)}>
+                {children}
+            </div>
         )
     }
 }
 
-const styles ={
-    card:{
-        backgroundColor: '#eee',
-        padding:'10px 15px ',
-        width:'calc(100vw - 20px)', 
-        height:'calc(100vh - 30px)',
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center'
-    }
-    
-}
+const styles = (isCentered: boolean): React.CSSProperties => ({
+
+    backgroundColor: '#eee',
+    padding: '10px 15px ',
+    width: 'calc(100vw - 30px)',
+    height: 'calc(100vh - 20px)',
+    display: 'flex',
+    justifyContent: isCentered ? 'center' : undefined,
+    alignItems: isCentered ? 'center' : undefined,
+    flexDirection: 'column'
+
+
+
+})
