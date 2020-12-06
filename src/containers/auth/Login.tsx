@@ -11,7 +11,7 @@ export default class Login extends React.Component {
   public render() {
     return (
       <div className="App">
-        <Container>
+        <Container isCentered={true}>
           <Card>
             <Title>Iniciar Sesion</Title>
             <Input label='Correo' placeholder='Correo' />
